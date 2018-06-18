@@ -21,9 +21,13 @@ fn main() {
 	let future = get_future(&my_struct);
 
 	core.run(future);
+
+	let future2 = get_future(&my_struct);
+
+	core.run(future2);
 }
 
-fn get_future(some_struct: &SomeStruct) -> Box<Future<Item=u32, Error=()>> {
+fn get_future(some_struct: & SomeStruct) -> Box<Future<Item=u32, Error=()>> {
 	let fut = ok(20).and_then(|val| {
 		let result = some_struct.do_something(val);
 		ok(result)
