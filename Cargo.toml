@@ -1,0 +1,7 @@
+[package]
+name = "lifetime_error"
+version = "0.1.0"
+
+[dependencies]
+tokio-core = "0.1"
+futures = "0.1"
